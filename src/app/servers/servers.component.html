@@ -15,8 +15,14 @@
 <!-- <p [innerText]="allowNewServer"></p> -->
 <!-- <p>{{ serverCreationStatus }}</p> -->
 
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
+
 <!-- *ngIf the star indicate it is a structural directive -->
 <!-- it will add or remove the element from the DOM. -->
-<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+<!-- <p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
+- use # as marker as you can see the else variable point to the marker created below
+<ng-template #noServer>
+    <p>No Server was created!</p>
+</ng-template> -->
 <app-server></app-server>
 <app-server></app-server>
