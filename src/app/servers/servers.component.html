@@ -13,6 +13,10 @@
     [disabled]="!allowNewServer"
     (click)="onCreateServer()">Add Server</button>
 <!-- <p [innerText]="allowNewServer"></p> -->
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+
+<!-- *ngIf the star indicate it is a structural directive -->
+<!-- it will add or remove the element from the DOM. -->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
 <app-server></app-server>
 <app-server></app-server>
